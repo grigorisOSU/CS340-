@@ -1,0 +1,57 @@
+<form id='search_people' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Search people for first name starting with:</label>
+    <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+    <input type="button" value="Search" onclick="searchPeopleByFirstName()">
+</form>
+
+<h1>Current people:</h1>
+
+{{#each customer}}
+{{this}}
+{{/each}}
+<table>
+    <thead> 
+        <th>Name</th> 
+        <th>Email</th> 
+        <th>Password</th>
+        <th>Credit</th>
+        <th>Address</th>  
+        <th>Apt Num</th>  
+        <th>Phone</th>  
+        <th>Birthdate</th>    
+    </thead> 
+    <tbody> 
+        {{#each people}} 
+        <tr> 
+            <td>{{customerName}}</td> 
+            <td>{{customerEmail}}</td> 
+            <td>{{customerPass}}</td>
+            <td>{{customerCredit}}</td>  
+            <td>{{customerAddress}}</td> 
+            <td>{{customerAptNum}}</td> 
+            <td>{{customerPhone}}</td> 
+            <td>{{customerBirthdate}}</td> 
+            
+            <td><a href="/tickets/{{customerID}}">Tickets</a></td>
+            <td><a href="/pos/{{customerID}}">Update</a></td>
+            <td><button onclick="deletePerson({{customerID}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+
+    <!--
+    <form id="addperson" action="/register" method="post">
+    Name: <input type="text" name="customerName" required><br>
+    Email: <input type="text" name="customerEmail" required><br>
+    Pass: <input type="text" name="customerPass" required><br>
+    Credit: <input type="text" name="customerCredit" required><br>
+    Address: <input type="text" name="customerAddress" required><br>
+    AptNum: <input type="text" name="customerAptNum"><br>
+    Phone: <input type="text" name="customerPhone" required><br>
+    Age: <input type="date" name="customerBirthdate" required><br>
+    <input type="submit" value="Submit">
+    </form>
+    -->
+    
+</table> 

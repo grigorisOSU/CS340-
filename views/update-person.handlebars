@@ -1,0 +1,15 @@
+<h1>Update {{person.customerName}}:</h1>
+<form id="update-person" action="/people" method="post">
+
+    Name: <input type="text" name="customerName" value="{{person.customerName}}"><br>
+    Email: <input type="text" name="customerEmail" value="{{person.customerEmail}}"><br>
+    Pass: <input type="text" name="customerPass" value="{{person.customerPass}}"><br>
+    Credit: <input type="text" name="customerCredit" value="{{person.customerCredit}}"><br>
+    Address: <input type="text" name="customerAddress" value="{{person.customerAddress}}"><br>
+    AptNum: <input type="text" name="customerAptNum" value="{{person.customerAptNum}}"><br>
+    Phone: <input type="text" name="customerPhone" value="{{person.customerPhone}}"><br>
+    Age: <input type="date" name="customerBirthdate" value="{{person.customerBirthdate}}"><br>
+
+</form>
+<button onclick="updatePerson({{person.customerID}})">Update</button>
+
